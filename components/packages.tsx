@@ -20,90 +20,194 @@ export function Packages() {
   const toggleExcursionExpanded = () => {
     setAllExcursionsExpanded(!allExcursionsExpanded)
   }
+
+  const handlePackageAction = (pkg: any) => {
+    if (pkg.type === "premium" && pkg.pdfUrl) {
+      // Abrir PDF en nueva pestaña
+      window.open(pkg.pdfUrl, '_blank')
+    } else {
+      // Para paquetes básicos, podrías agregar lógica de contacto aquí
+      console.log('Consultar más información para:', pkg.name)
+    }
+  }
   const packages = [
     {
       id: 1,
-      name: "Río de Janeiro Maravilloso",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Viaje grupal a Dubai y Abu Dhabi FIN DE AÑO",
+      image: "/dubai.webp",
       description:
-        "Descubre la ciudad maravillosa con sus playas icónicas, el Cristo Redentor y la vibrante cultura carioca. Una experiencia única entre montañas y mar.",
-      price: "Desde $95.900",
-      duration: "5 días / 4 noches",
-      dates: ["15 Mar", "22 Mar", "05 Abr", "19 Abr", "22 abr", "03 May", "17 May", "31 May", "14 Jun", "28 Jun", "12 Jul", "26 Jul", "09 Ago", "23 Ago", "06 Sep", "20 Sep"],
+        "Vive una experiencia única de fin de año en los Emiratos Árabes Unidos. Descubre el lujo y la modernidad de Dubai junto con la cultura tradicional de Abu Dhabi.",
+      price: "Consultar precios",
+      duration: "14 días / 12 noches",
+      dates: ["27 Dic 2025"],
       rating: 4.9,
-      highlights: ["Hotel 4★", "Desayuno incluido", "City tour", "Traslados"],
-      location: "Río de Janeiro, RJ",
-      groupSize: "Máximo 25 personas",
+      highlights: ["Viaje grupal", "Fin de año", "Dubai y Abu Dhabi", "Experiencia completa"],
+      location: "Emiratos Árabes Unidos",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/dubai.pdf",
     },
     {
       id: 2,
-      name: "Salvador Histórico",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Salvador de Bahía con Palladium Imbassaí",
+      image: "/salvador.webp",
       description:
-        "Sumérgete en la rica cultura afrobrasileña de Salvador, con su centro histórico colonial, capoeira y la deliciosa cocina bahiana.",
-      price: "Desde $78.500",
-      duration: "4 días / 3 noches",
-      dates: ["08 Mar", "15 Mar", "29 Mar", "12 Abr"],
+        "Disfruta de la cultura bahiana y relájate en las hermosas playas de Imbassaí con el confort del hotel Palladium. Una experiencia única en Brasil.",
+      price: "Consultar precios",
+      duration: "10 días / 8 noches",
+      dates: ["20 Sep 2025"],
       rating: 4.8,
-      highlights: ["Pelourinho", "Show de capoeira", "Traslados", "Gastronomía típica"],
-      location: "Salvador, Bahía",
-      groupSize: "Máximo 20 personas",
+      highlights: ["Hotel Palladium", "Playas de Imbassaí", "Cultura bahiana", "All Inclusive"],
+      location: "Salvador de Bahía, Brasil",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/salvador_bahia.pdf",
     },
     {
       id: 3,
-      name: "Amazonas Selvático",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Viaje grupal a Punta Cana + Bayahibe",
+      image: "/punta_cana.webp",
       description:
-        "Vive una aventura única en el corazón de la selva amazónica, navegando por ríos, observando fauna y conociendo comunidades locales.",
-      price: "Desde $115.200",
-      duration: "6 días / 5 noches",
-      dates: ["12 Mar", "26 Mar", "09 Abr", "23 Abr"],
-      rating: 4.7,
-      highlights: ["Lodge en la selva", "Navegación río", "Avistamiento fauna", "Cultura indígena"],
-      location: "Manaos, Amazonas",
-      groupSize: "Máximo 16 personas",
+        "Combina lo mejor de República Dominicana: las playas paradisíacas de Punta Cana y la belleza natural de Bayahibe en un solo viaje inolvidable.",
+      price: "Consultar precios",
+      duration: "11 días / 10 noches",
+      dates: ["05 Ene 2026", "19 Ene 2026", "11 Mar 2026", "11 May 2026"],
+      rating: 4.9,
+      highlights: ["5 noches Punta Cana", "5 noches Bayahibe", "Playas paradisíacas", "Viaje grupal"],
+      location: "República Dominicana",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/rd-bayahibe.pdf",
     },
     {
       id: 4,
-      name: "Cataratas de Iguazú",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Viaje grupal a Río de Janeiro y Búzios",
+      image: "/rio.webp",
       description:
-        "Maravíllate con una de las 7 maravillas naturales del mundo desde el lado brasileño, con vistas panorámicas espectaculares.",
-      price: "Desde $88.800",
-      duration: "3 días / 2 noches",
-      dates: ["10 Mar", "17 Mar", "31 Mar", "14 Abr"],
-      rating: 5.0,
-      highlights: ["Lado brasileño", "Parque Nacional", "Paseo panorámico", "Trilha das Cataratas"],
-      location: "Foz do Iguaçu, Paraná",
-      groupSize: "Máximo 25 personas",
+        "Descubre la ciudad maravillosa de Río de Janeiro y relájate en las sofisticadas playas de Búzios. La combinación perfecta entre ciudad y playa.",
+      price: "Consultar precios",
+      duration: "11 días / 10 noches",
+      dates: ["01 Oct 2025", "25 Nov 2025"],
+      rating: 4.8,
+      highlights: ["Cristo Redentor", "Playas de Búzios", "Pan de Azúcar", "Viaje grupal"],
+      location: "Río de Janeiro y Búzios, Brasil",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/rio_buzios.pdf",
     },
     {
       id: 5,
-      name: "Fernando de Noronha Paraíso",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Cancún con Playa del Carmen y Panamá de Regalo",
+      image: "/cancun.webp",
       description:
-        "Disfruta del paraíso tropical brasileño con aguas cristalinas, playas vírgenes y una biodiversidad marina excepcional.",
-      price: "Desde $145.900",
-      duration: "5 días / 4 noches",
-      dates: ["20 Mar", "03 Abr", "17 Abr", "01 May"],
-      rating: 4.9,
-      highlights: ["Playas vírgenes", "Snorkel", "Reserva ecológica", "Delfines"],
-      location: "Fernando de Noronha, PE",
-      groupSize: "Máximo 12 personas",
+        "Disfruta del Caribe mexicano en Cancún y Playa del Carmen, más una increíble extensión a Panamá incluida en tu paquete.",
+      price: "Consultar precios",
+      duration: "12 días / 11 noches",
+      dates: ["10 Mar 2026", "22 Abr 2026", "03 Jun 2026"],
+      rating: 4.7,
+      highlights: ["Cancún", "Playa del Carmen", "Panamá incluido", "Caribe mexicano"],
+      location: "México y Panamá",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/cancun.pdf",
     },
     {
       id: 6,
-      name: "Florianópolis Mágica",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Cuba Sol y Playas con All Inclusive",
+      image: "/cuba.webp",
       description:
-        "Relájate en la Isla de la Magia con sus 42 playas, lagunas cristalinas y la perfecta combinación de naturaleza y vida nocturna.",
-      price: "Desde $68.700",
-      duration: "4 días / 3 noches",
-      dates: ["18 Mar", "25 Mar", "08 Abr", "22 Abr"],
+        "Vive la auténtica experiencia cubana con sol, playas paradisíacas y la hospitalidad caribeña en un resort todo incluido.",
+      price: "Consultar precios",
+      duration: "11 días / 10 noches",
+      dates: ["18 Oct 2025"],
       rating: 4.6,
-      highlights: ["Playas paradisíacas", "Lagoa da Conceição", "Vida nocturna", "Gastronomía costera"],
-      location: "Florianópolis, Santa Catarina",
-      groupSize: "Máximo 20 personas",
+      highlights: ["All Inclusive", "Playas caribeñas", "Cultura cubana", "Sol y relax"],
+      location: "Cuba",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/cuba.pdf",
+    },
+    {
+      id: 7,
+      name: "Viaje grupal a Perú con Machu Picchu",
+      image: "/peru.webp",
+      description:
+        "Descubre las maravillas del Imperio Inca y visita la ciudadela sagrada de Machu Picchu en una experiencia cultural única e inolvidable.",
+      price: "Consultar precios",
+      duration: "10 días / 8 noches",
+      dates: ["08 Oct 2025", "24 Oct 2025", "29 Nov 2025", "13 Ene 2026", "10 Feb 2026", "09 Mar 2026", "28 Mar 2026", "13 May 2026"],
+      rating: 5.0,
+      highlights: ["Machu Picchu", "Valle Sagrado", "Cusco", "Patrimonio UNESCO"],
+      location: "Perú",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/peru.pdf",
+    },
+    {
+      id: 8,
+      name: "Brasil | Florianópolis - Camboriu - Bombinhas",
+      image: "/floripa.webp",
+      description:
+        "Descubre las mejores playas de Brasil en un viaje completo por Florianópolis, Camboriu y Bombinhas. Incluye hotel Palace, bus premium, piscina y excursiones.",
+      price: "Desde $790 USD",
+      duration: "10 días / 7 noches",
+      dates: ["Sep 2025", "Oct 2025", "Nov 2025", "03 Ene 2026", "10 Ene 2026", "17 Ene 2026", "24 Ene 2026", "26 Feb 2026", "05 Mar 2026", "12 Mar 2026", "19 Mar 2026", "26 Mar 2026"],
+      rating: 4.8,
+      highlights: ["Hotel Palace", "Bus Mix Premium", "Piscina", "Desayuno y cena buffet", "Excursiones incluidas"],
+      location: "Santa Catarina, Brasil",
+      groupSize: "Grupo organizado",
+      type: "basic",
+      priceDetails: {
+        "Sep-Nov 2025": "Desde $790 USD",
+        "Enero 2026": "Desde $990 USD",
+        "Febrero 2026": "Desde $990 USD", 
+        "Marzo 2026": "Desde $890 USD"
+      }
+    },
+    {
+      id: 9,
+      name: "Cataratas del Iguazú",
+      image: "/cataratas.webp",
+      description:
+        "Vive la experiencia de las majestuosas Cataratas del Iguazú con bus premium, visita a los Saltos del Mocona, media pensión y compras en Ciudad del Este.",
+      price: "Desde $450 USD",
+      duration: "7 días / 4 noches",
+      dates: ["26 Oct 2025"],
+      rating: 4.9,
+      highlights: ["Bus Mix Premium+", "Saltos del Mocona", "Media pensión", "Coordinador permanente", "Compras Ciudad del Este", "Piscina"],
+      location: "Misiones, Argentina",
+      groupSize: "Grupo organizado",
+      type: "basic",
+    },
+    {
+      id: 10,
+      name: "Una Navidad Distinta en Florianópolis",
+      image: "/navidad.webp",
+      description:
+        "Celebra una Navidad única en las hermosas playas de Florianópolis. Incluye hotel Palace, excursiones a Bombas, Bombinhas y Camboriú, más actividades especiales navideñas.",
+      price: "Desde $890 USD",
+      duration: "10 días / 7 noches",
+      dates: ["20 Dic 2025"],
+      rating: 4.8,
+      highlights: ["Hotel Palace", "Bus Mix Premium", "3 excursiones incluidas", "Media pensión", "Piscina climatizada", "Coordinación permanente"],
+      location: "Florianópolis, Brasil",
+      groupSize: "Grupo organizado",
+      type: "basic",
+    },
+    {
+      id: 11,
+      name: "Año Nuevo en Florianópolis",
+      image: "/añonuevo.webp",
+      description:
+        "Recibe el 2026 en uno de los destinos más mágicos de Brasil. Fiesta de fin de año en la playa con fuegos artificiales, hotel Palace y excursiones incluidas.",
+      price: "Desde $1.300 USD",
+      duration: "10 días / 7 noches",
+      dates: ["27 Dic 2025"],
+      rating: 4.9,
+      highlights: ["Fiesta Año Nuevo", "Hotel Palace", "Bus Mix Premium", "3 excursiones incluidas", "Fuegos artificiales", "Actividades especiales"],
+      location: "Florianópolis, Brasil",
+      groupSize: "Grupo organizado",
+      type: "basic",
     },
   ]
 
@@ -329,12 +433,17 @@ export function Packages() {
 
                 {/* Price and CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div>
-                    <span className="text-2xl font-bold text-travel-blue">{pkg.price}</span>
-                    <span className="text-sm text-gray-500 block">por persona</span>
-                  </div>
-                  <Button className="bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md">
-                    Consultar
+                  {pkg.price !== "Consultar precios" && (
+                    <div>
+                      <span className="text-2xl font-bold text-travel-blue">{pkg.price}</span>
+                      <span className="text-sm text-gray-500 block">por persona</span>
+                    </div>
+                  )}
+                  <Button 
+                    onClick={() => handlePackageAction(pkg)}
+                    className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${pkg.price === "Consultar precios" ? "ml-auto" : ""}`}
+                  >
+                    {pkg.type === "basic" ? "Consultar más información" : "Ver Itinerario y Precios"}
                   </Button>
                 </div>
               </div>
@@ -464,12 +573,14 @@ export function Packages() {
 
                   {/* Price and CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
-                    <div>
-                      <span className="text-xl font-bold text-travel-blue">{excursion.price}</span>
-                      <span className="text-sm text-gray-500 block">por persona</span>
-                    </div>
-                    <Button className="bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md">
-                      Consultar
+                    {excursion.price !== "Consultar precios" && (
+                      <div>
+                        <span className="text-xl font-bold text-travel-blue">{excursion.price}</span>
+                        <span className="text-sm text-gray-500 block">por persona</span>
+                      </div>
+                    )}
+                    <Button className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}>
+                      Ver Itinerario y Precios
                     </Button>
                   </div>
                 </div>
