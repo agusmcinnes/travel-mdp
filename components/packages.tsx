@@ -26,8 +26,8 @@ export function Packages() {
       // Abrir PDF en nueva pestaña
       window.open(pkg.pdfUrl, '_blank')
     } else {
-      // Para paquetes básicos, podrías agregar lógica de contacto aquí
-      console.log('Consultar más información para:', pkg.name)
+      // Para paquetes básicos, redirigir a WhatsApp
+      window.open('https://wa.link/diii0m', '_blank')
     }
   }
   const packages = [
@@ -588,7 +588,10 @@ export function Packages() {
                         <span className="text-sm text-gray-500 block">por persona</span>
                       </div>
                     )}
-                    <Button className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}>
+                    <Button 
+                      onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+                      className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}
+                    >
                       Consulta ahora
                     </Button>
                   </div>

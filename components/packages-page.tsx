@@ -24,8 +24,8 @@ export function PackagesPage() {
     if (pkg.type === 'premium' && pkg.pdfUrl) {
       window.open(pkg.pdfUrl, '_blank')
     } else {
-      // Para paquetes básicos, podrías manejar una acción diferente
-      console.log('Consultar precios para:', pkg.name)
+      // Para paquetes básicos, redirigir a WhatsApp
+      window.open('https://wa.link/diii0m', '_blank')
     }
   }
 
@@ -611,7 +611,10 @@ export function PackagesPage() {
                         <span className="text-sm text-gray-500 block">por persona</span>
                       </div>
                     )}
-                    <Button className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}>
+                    <Button 
+                      onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+                      className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}
+                    >
                       Consulta ahora
                     </Button>
                   </div>
@@ -628,7 +631,10 @@ export function PackagesPage() {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Diseñamos experiencias personalizadas según tus intereses y nivel de aventura. Desde tours culturales hasta aventuras extremas.
             </p>
-            <Button className="bg-travel-blue hover:bg-travel-blue/90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+            <Button 
+              onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+              className="bg-travel-blue hover:bg-travel-blue/90 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+            >
               Contactar a un asesor
             </Button>
           </div>

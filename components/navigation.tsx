@@ -56,7 +56,10 @@ export function Navigation() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-travel-gold transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 hover:from-yellow-300 hover:via-yellow-400 hover:to-amber-400 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105">
+            <Button 
+              onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+              className="bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 hover:from-yellow-300 hover:via-yellow-400 hover:to-amber-400 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105"
+            >
               Consultar Ahora
             </Button>
           </div>
@@ -100,7 +103,10 @@ export function Navigation() {
                   ))}
                 </div>
                 <div className="px-6 pb-6 pt-2 border-t border-gray-100">
-                  <Button className="w-full bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 hover:from-yellow-300 hover:via-yellow-400 hover:to-amber-400 text-travel-blue font-bold py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+                  <Button 
+                    onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+                    className="w-full bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 hover:from-yellow-300 hover:via-yellow-400 hover:to-amber-400 text-travel-blue font-bold py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+                  >
                     Consultar Ahora
                   </Button>
                 </div>

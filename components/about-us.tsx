@@ -378,7 +378,10 @@ export function AboutUs() {
             <p className="text-gray-600 mb-6">
               Nuestro equipo de expertos está disponible para ayudarlo a encontrar el hotel perfecto para su viaje.
             </p>
-            <button className="bg-travel-gold hover:bg-travel-gold/90 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <button 
+              onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+              className="bg-travel-gold hover:bg-travel-gold/90 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
               Contactar Asesor
             </button>
           </div>
