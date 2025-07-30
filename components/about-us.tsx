@@ -20,9 +20,9 @@ export function AboutUs() {
       name: 'Hotel Palace 1',
       location: 'Canasvieiras, Brasil',
       images: [
-        '/travel_pileta.webp',
-        '/pileta_palace.webp',
-        '/travel_grupal.webp'
+        '/card_palace_3.webp',
+        '/card_palace_2.webp',
+        '/card_palace_1.webp'
       ],
       description: 'Elegancia y sofisticación en el corazón de Canasvieiras.',
       link: 'https://www.hotelpalace1.com',
@@ -33,12 +33,10 @@ export function AboutUs() {
       name: 'Lexus Beira mar',
       location: 'Canasvieiras, Brasil',
       images: [
-        '/travel_pileta.webp',
-        '/pileta_palace.webp',
-        '/travel_grupal.webp'
+        'residencial-lexus-beira.webp',
       ],
       description: 'Lujo y confort frente al mar con vistas espectaculares al océano.',
-      link: 'https://www.lexusbeiramar.com',
+      link: 'https://lexus-beiramar.hotelflorianopolis.com/es/',
       rating: 5
     },
     {
@@ -46,38 +44,21 @@ export function AboutUs() {
       name: 'Paraíso Palace',
       location: 'Canasvieiras, Brasil',
       images: [
-        '/travel_pileta.webp',
-        '/pileta_palace.webp',
-        '/travel_grupal.webp'
+        '/paraisopalace.webp',
       ],
       description: 'Un verdadero paraíso con servicios all-inclusive y entretenimiento.',
-      link: 'https://www.paraisopalace.com',
+      link: 'https://paraisopalacehotel.com.br/home-espanol/',
       rating: 5
-    },
-    {
-      id: 'hotel4',
-      name: 'Palace 1',
-      location: 'Canasvieiras, Brasil',
-      images: [
-        '/travel_pileta.webp',
-        '/pileta_palace.webp',
-        '/travel_grupal.webp'
-      ],
-      description: 'Experiencia única con atención personalizada y instalaciones premium.',
-      link: 'https://www.palace1.com',
-      rating: 4
     },
     {
       id: 'hotel5',
       name: 'Bora Bora Bombinhas',
       location: 'Bombinhas, Brasil',
       images: [
-        '/travel_pileta.webp',
-        '/pileta_palace.webp',
-        '/travel_grupal.webp'
+        '/borabora.webp',
       ],
       description: 'Resort exclusivo en las hermosas playas de Bombinhas.',
-      link: 'https://www.borabora-bombinhas.com',
+      link: 'https://www.boraborapousada.com.br/site/pt-br/home',
       rating: 5
     },
     {
@@ -85,12 +66,10 @@ export function AboutUs() {
       name: 'Boulevard Canasvieras',
       location: 'Canasvieiras, Brasil',
       images: [
-        '/travel_pileta.webp',
-        '/pileta_palace.webp',
-        '/travel_grupal.webp'
+        '/boulevard.webp',
       ],
       description: 'Moderno hotel boutique con vista al mar y servicios de primera clase.',
-      link: 'https://www.boulevardcanasvieras.com',
+      link: 'https://www.hoteisboulevard.com.br/',
       rating: 4
     }
   ]
@@ -132,14 +111,24 @@ export function AboutUs() {
               <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-travel-blue mb-6">
                 Nuestra Historia
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Desde 2008, Travel Mar del Plata ha sido el puente entre los sueños de viaje y las experiencias reales.
-                Nacimos con la pasión de mostrar el mundo a través de los ojos de quienes lo aman.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Cada destino que ofrecemos ha sido cuidadosamente seleccionado y probado por nuestro equipo. No vendemos
-                viajes, creamos memorias que duran toda la vida.
-              </p>
+              <div className="flex flex-col gap-4">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Desde 2015, Travel Group Mar del Plata transforma sueños en experiencias inolvidables. Nacimos con la pasión de mostrar el mundo desde una mirada auténtica: la de quienes lo viven intensamente.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                      Contamos con un equipo altamente capacitado, conformado por asesores de viajes, ejecutivos de ventas y guías profesionales que te acompañan en cada paso, brindando una atención personalizada y de excelencia.
+
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                      Trabajamos con hoteles de categoría superior, cuidadosamente seleccionados por nuestro equipo.
+                      Elegimos únicamente aquellos que cumplen con los más altos estándares de calidad, ubicación y servicio, porque sabemos que el confort es parte fundamental de una gran experiencia.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                      Cada destino ha sido explorado, evaluado y validado por nosotros.
+                      No vendemos viajes. Creamos momentos que se convierten en recuerdos para toda la vida.
+                  </p>
+              </div>
+
             </div>
 
             <div className="grid sm:grid-cols-3 gap-6">
@@ -162,45 +151,45 @@ export function AboutUs() {
           </div>
 
           {/* Images */}
-          <div className="relative">
+          <div className="relative max-w-md mx-auto lg:mx-0">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src="/travel_grupal.webp"
                     alt="Equipo Travel Mar del Plata"
-                    width={250}
-                    height={300}
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                    width={200}
+                    height={240}
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src="/travel_comida.webp"
                     alt="Oficina Travel Mar del Plata"
-                    width={250}
-                    height={200}
-                    className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
+                    width={200}
+                    height={160}
+                    className="w-full h-32 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
-              <div className="space-y-4 pt-8">
+              <div className="space-y-4 pt-6">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src="/travel_pileta.webp"
                     alt="Viajeros felices"
-                    width={250}
-                    height={300}
-                    className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
+                    width={200}
+                    height={160}
+                    className="w-full h-32 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src="/travel_grupal-2.webp"
                     alt="Destinos increíbles"
-                    width={250}
-                    height={300}
-                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
+                    width={200}
+                    height={240}
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -245,8 +234,8 @@ export function AboutUs() {
               key={hotel.id}
               className={`bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group transform hover:-translate-y-2 ${
                 hotel.id === 'hotel2' 
-                  ? 'col-span-full border-4 border-travel-gold relative md:scale-105' 
-                  : ''
+                  ? 'col-span-full border-4 border-travel-gold relative md:scale-105 max-w-4xl mx-auto' 
+                  : 'h-[500px] flex flex-col'
               }`}
             >
               {/* Special Badge for Featured Hotel */}
@@ -260,44 +249,50 @@ export function AboutUs() {
               <div className={`relative overflow-hidden ${
                 hotel.id === 'hotel2' 
                   ? 'h-64 sm:h-80 md:h-96' 
-                  : 'h-64'
+                  : 'h-64 flex-shrink-0'
               }`}>
                 <Image
                   src={hotel.images[currentImageIndex[hotel.id as keyof typeof currentImageIndex]]}
                   alt={hotel.name}
-                  width={600}
-                  height={300}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 
-                {/* Carousel Controls */}
-                <button
-                  onClick={() => prevImage(hotel.id)}
-                  className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 sm:p-2 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
-                >
-                  <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-travel-blue" />
-                </button>
-                <button
-                  onClick={() => nextImage(hotel.id)}
-                  className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 sm:p-2 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
-                >
-                  <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-travel-blue" />
-                </button>
-
-                {/* Image Indicators */}
-                <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-                  {hotel.images.map((_, imgIndex) => (
+                {/* Carousel Controls - Solo mostrar si hay más de una imagen */}
+                {hotel.images.length > 1 && (
+                  <>
                     <button
-                      key={imgIndex}
-                      onClick={() => setCurrentImageIndex(prev => ({ ...prev, [hotel.id]: imgIndex }))}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        imgIndex === currentImageIndex[hotel.id as keyof typeof currentImageIndex]
-                          ? 'bg-white w-4 sm:w-6' 
-                          : 'bg-white/50 hover:bg-white/80'
-                      }`}
-                    />
-                  ))}
-                </div>
+                      onClick={() => prevImage(hotel.id)}
+                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 sm:p-2 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    >
+                      <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 text-travel-blue" />
+                    </button>
+                    <button
+                      onClick={() => nextImage(hotel.id)}
+                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 sm:p-2 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    >
+                      <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-travel-blue" />
+                    </button>
+                  </>
+                )}
+
+                {/* Image Indicators - Solo mostrar si hay más de una imagen */}
+                {hotel.images.length > 1 && (
+                  <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    {hotel.images.map((_, imgIndex) => (
+                      <button
+                        key={imgIndex}
+                        onClick={() => setCurrentImageIndex(prev => ({ ...prev, [hotel.id]: imgIndex }))}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          imgIndex === currentImageIndex[hotel.id as keyof typeof currentImageIndex]
+                            ? 'bg-white w-4 sm:w-6' 
+                            : 'bg-white/50 hover:bg-white/80'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
 
                 {/* Rating Badge */}
                 <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 ${
@@ -311,30 +306,36 @@ export function AboutUs() {
               </div>
 
               {/* Content */}
-              <div className={`p-4 sm:p-6 md:p-8 ${hotel.id === 'hotel2' ? 'text-center' : ''}`}>
-                <h3 className={`font-montserrat font-bold text-travel-blue mb-2 ${
-                  hotel.id === 'hotel2' 
-                    ? 'text-xl sm:text-2xl md:text-3xl lg:text-4xl' 
-                    : 'text-xl sm:text-2xl'
-                }`}>
-                  {hotel.name}
-                </h3>
-                <div className={`flex items-center gap-2 mb-4 ${hotel.id === 'hotel2' ? 'justify-center' : ''}`}>
-                  <MapPin className="h-4 w-4 text-travel-gold flex-shrink-0" />
-                  <span className="text-gray-600 text-sm font-medium">{hotel.location}</span>
+              <div className={`${
+                hotel.id === 'hotel2' 
+                  ? 'p-4 sm:p-6 md:p-8 text-center' 
+                  : 'p-4 sm:p-6 flex-1 flex flex-col justify-between'
+              }`}>
+                <div className="flex-1">
+                  <h3 className={`font-montserrat font-bold text-travel-blue mb-2 ${
+                    hotel.id === 'hotel2' 
+                      ? 'text-xl sm:text-2xl md:text-3xl lg:text-4xl' 
+                      : 'text-xl sm:text-2xl'
+                  }`}>
+                    {hotel.name}
+                  </h3>
+                  <div className={`flex items-center gap-2 mb-4 ${hotel.id === 'hotel2' ? 'justify-center' : ''}`}>
+                    <MapPin className="h-4 w-4 text-travel-gold flex-shrink-0" />
+                    <span className="text-gray-600 text-sm font-medium">{hotel.location}</span>
+                  </div>
+                  <p className={`text-gray-600 leading-relaxed ${
+                    hotel.id === 'hotel2' 
+                      ? 'text-base sm:text-lg max-w-2xl mx-auto mb-6' 
+                      : 'text-sm sm:text-base mb-6'
+                  }`}>
+                    {hotel.description}
+                  </p>
                 </div>
-                <p className={`text-gray-600 mb-6 leading-relaxed ${
-                  hotel.id === 'hotel2' 
-                    ? 'text-base sm:text-lg max-w-2xl mx-auto' 
-                    : 'text-sm sm:text-base'
-                }`}>
-                  {hotel.description}
-                </p>
                 
                 <div className={`flex items-center ${
                   hotel.id === 'hotel2' 
                     ? 'flex-col sm:flex-row justify-center gap-4 sm:gap-8' 
-                    : 'justify-between'
+                    : 'justify-between mt-auto'
                 }`}>
                   <div className="flex items-center gap-2">
                     <div className="flex">
@@ -377,7 +378,10 @@ export function AboutUs() {
             <p className="text-gray-600 mb-6">
               Nuestro equipo de expertos está disponible para ayudarlo a encontrar el hotel perfecto para su viaje.
             </p>
-            <button className="bg-travel-gold hover:bg-travel-gold/90 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <button 
+              onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+              className="bg-travel-gold hover:bg-travel-gold/90 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
               Contactar Asesor
             </button>
           </div>

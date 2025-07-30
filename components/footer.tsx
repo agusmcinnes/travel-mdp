@@ -29,18 +29,20 @@ export function Footer() {
                 />
               </Link>
               <p className="text-blue-100 mb-6 leading-relaxed max-w-md">
-                Tu agencia de viajes de confianza desde 2008. Creamos experiencias únicas y memorables para que cada
+                Tu agencia de viajes de confianza desde 2015. Creamos experiencias únicas y memorables para que cada
                 viaje sea una aventura inolvidable.
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/p/Travel-Mar-Del-Plata-100063552577660/"
+                  target="_blank"
                   className="bg-travel-gold hover:bg-travel-gold/80 p-2 rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <Facebook className="h-5 w-5 text-travel-blue" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/travelgroupmardelplata/?hl=en"
+                  target="_blank"
                   className="bg-travel-gold hover:bg-travel-gold/80 p-2 rounded-full transition-all duration-300 hover:scale-110"
                 >
                   <Instagram className="h-5 w-5 text-travel-blue" />
@@ -95,11 +97,11 @@ export function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-travel-gold mt-0.5 flex-shrink-0" />
-                  <span className="text-blue-100">Av. Independencia 2847, Mar del Plata, Buenos Aires</span>
+                  <span className="text-blue-100">Falucho 81, Mar del Plata, Buenos Aires</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-travel-gold flex-shrink-0" />
-                  <span className="text-blue-100">+54 223 456-7890</span>
+                  <span className="text-blue-100">0223-15-541-2702</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-travel-gold flex-shrink-0" />
@@ -111,16 +113,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-blue-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="border-t-2 border-blue-900">
+          <div className="mx-auto flex justify-center px-4 sm:px-6 lg:px-8 py-6">
               <p className="text-blue-100 text-sm">
                 © {currentYear} Travel Mar del Plata. Todos los derechos reservados.
               </p>
-              <p className="text-blue-100 text-sm flex items-center">
-                Hecho con <Heart className="h-4 w-4 text-travel-gold mx-1 fill-current" /> para viajeros soñadores
-              </p>
-            </div>
           </div>
         </div>
       </div>

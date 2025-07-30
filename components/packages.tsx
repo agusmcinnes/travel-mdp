@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export function Packages() {
   const [expandedDates, setExpandedDates] = useState<{ [key: number]: boolean }>({})
-  const [allExcursionsExpanded, setAllExcursionsExpanded] = useState<boolean>(false)
+  const [expandedExcursions, setExpandedExcursions] = useState(false)
 
   const toggleDates = (packageId: number) => {
     setExpandedDates(prev => ({
@@ -17,210 +17,317 @@ export function Packages() {
     }))
   }
 
-  const toggleExcursionExpanded = () => {
-    setAllExcursionsExpanded(!allExcursionsExpanded)
+  const toggleExcursion = () => {
+    setExpandedExcursions(prev => !prev)
+  }
+
+  const handlePackageAction = (pkg: any) => {
+    if (pkg.type === "premium" && pkg.pdfUrl) {
+      // Abrir PDF en nueva pestaña
+      window.open(pkg.pdfUrl, '_blank')
+    } else {
+      // Para paquetes básicos, redirigir a WhatsApp
+      window.open('https://wa.link/diii0m', '_blank')
+    }
   }
   const packages = [
     {
       id: 1,
-      name: "Río de Janeiro Maravilloso",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Viaje grupal a Dubai y Abu Dhabi FIN DE AÑO",
+      image: "/dubai.webp",
       description:
-        "Descubre la ciudad maravillosa con sus playas icónicas, el Cristo Redentor y la vibrante cultura carioca. Una experiencia única entre montañas y mar.",
-      price: "Desde $95.900",
-      duration: "5 días / 4 noches",
-      dates: ["15 Mar", "22 Mar", "05 Abr", "19 Abr", "22 abr", "03 May", "17 May", "31 May", "14 Jun", "28 Jun", "12 Jul", "26 Jul", "09 Ago", "23 Ago", "06 Sep", "20 Sep"],
+        "Vive una experiencia única de fin de año en los Emiratos Árabes Unidos. Descubre el lujo y la modernidad de Dubai junto con la cultura tradicional de Abu Dhabi.",
+      price: "Consultar precios",
+      duration: "14 días / 12 noches",
+      dates: ["27 Dic 2025"],
       rating: 4.9,
-      highlights: ["Hotel 4★", "Desayuno incluido", "City tour", "Traslados"],
-      location: "Río de Janeiro, RJ",
-      groupSize: "Máximo 25 personas",
+      highlights: ["Viaje grupal", "Fin de año", "Dubai y Abu Dhabi", "Experiencia completa"],
+      location: "Emiratos Árabes Unidos",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/dubai.pdf",
     },
     {
       id: 2,
-      name: "Salvador Histórico",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Salvador de Bahía con Palladium Imbassaí",
+      image: "/salvador.webp",
       description:
-        "Sumérgete en la rica cultura afrobrasileña de Salvador, con su centro histórico colonial, capoeira y la deliciosa cocina bahiana.",
-      price: "Desde $78.500",
-      duration: "4 días / 3 noches",
-      dates: ["08 Mar", "15 Mar", "29 Mar", "12 Abr"],
+        "Disfruta de la cultura bahiana y relájate en las hermosas playas de Imbassaí con el confort del hotel Palladium. Una experiencia única en Brasil.",
+      price: "Consultar precios",
+      duration: "10 días / 8 noches",
+      dates: ["20 Sep 2025"],
       rating: 4.8,
-      highlights: ["Pelourinho", "Show de capoeira", "Traslados", "Gastronomía típica"],
-      location: "Salvador, Bahía",
-      groupSize: "Máximo 20 personas",
+      highlights: ["Hotel Palladium", "Playas de Imbassaí", "Cultura bahiana", "All Inclusive"],
+      location: "Salvador de Bahía, Brasil",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/salvador_bahia.pdf",
     },
     {
       id: 3,
-      name: "Amazonas Selvático",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Viaje grupal a Punta Cana + Bayahibe",
+      image: "/punta_cana.webp",
       description:
-        "Vive una aventura única en el corazón de la selva amazónica, navegando por ríos, observando fauna y conociendo comunidades locales.",
-      price: "Desde $115.200",
-      duration: "6 días / 5 noches",
-      dates: ["12 Mar", "26 Mar", "09 Abr", "23 Abr"],
-      rating: 4.7,
-      highlights: ["Lodge en la selva", "Navegación río", "Avistamiento fauna", "Cultura indígena"],
-      location: "Manaos, Amazonas",
-      groupSize: "Máximo 16 personas",
+        "Combina lo mejor de República Dominicana: las playas paradisíacas de Punta Cana y la belleza natural de Bayahibe en un solo viaje inolvidable.",
+      price: "Consultar precios",
+      duration: "11 días / 10 noches",
+      dates: ["05 Ene 2026", "19 Ene 2026", "11 Mar 2026", "11 May 2026"],
+      rating: 4.9,
+      highlights: ["5 noches Punta Cana", "5 noches Bayahibe", "Playas paradisíacas", "Viaje grupal"],
+      location: "República Dominicana",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/rd-bayahibe.pdf",
     },
     {
       id: 4,
-      name: "Cataratas de Iguazú",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Viaje grupal a Río de Janeiro y Búzios",
+      image: "/rio.webp",
       description:
-        "Maravíllate con una de las 7 maravillas naturales del mundo desde el lado brasileño, con vistas panorámicas espectaculares.",
-      price: "Desde $88.800",
-      duration: "3 días / 2 noches",
-      dates: ["10 Mar", "17 Mar", "31 Mar", "14 Abr"],
-      rating: 5.0,
-      highlights: ["Lado brasileño", "Parque Nacional", "Paseo panorámico", "Trilha das Cataratas"],
-      location: "Foz do Iguaçu, Paraná",
-      groupSize: "Máximo 25 personas",
+        "Descubre la ciudad maravillosa de Río de Janeiro y relájate en las sofisticadas playas de Búzios. La combinación perfecta entre ciudad y playa.",
+      price: "Consultar precios",
+      duration: "11 días / 10 noches",
+      dates: ["01 Oct 2025", "25 Nov 2025"],
+      rating: 4.8,
+      highlights: ["Cristo Redentor", "Playas de Búzios", "Pan de Azúcar", "Viaje grupal"],
+      location: "Río de Janeiro y Búzios, Brasil",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/rio_buzios.pdf",
     },
     {
       id: 5,
-      name: "Fernando de Noronha Paraíso",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Cancún con Playa del Carmen y Panamá de Regalo",
+      image: "/cancun.webp",
       description:
-        "Disfruta del paraíso tropical brasileño con aguas cristalinas, playas vírgenes y una biodiversidad marina excepcional.",
-      price: "Desde $145.900",
-      duration: "5 días / 4 noches",
-      dates: ["20 Mar", "03 Abr", "17 Abr", "01 May"],
-      rating: 4.9,
-      highlights: ["Playas vírgenes", "Snorkel", "Reserva ecológica", "Delfines"],
-      location: "Fernando de Noronha, PE",
-      groupSize: "Máximo 12 personas",
+        "Disfruta del Caribe mexicano en Cancún y Playa del Carmen, más una increíble extensión a Panamá incluida en tu paquete.",
+      price: "Consultar precios",
+      duration: "12 días / 11 noches",
+      dates: ["10 Mar 2026", "22 Abr 2026", "03 Jun 2026"],
+      rating: 4.7,
+      highlights: ["Cancún", "Playa del Carmen", "Panamá incluido", "Caribe mexicano"],
+      location: "México y Panamá",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/cancun.pdf",
     },
     {
       id: 6,
-      name: "Florianópolis Mágica",
-      image: "/placeholder.svg?height=300&width=400",
+      name: "Cuba Sol y Playas con All Inclusive",
+      image: "/cuba.webp",
       description:
-        "Relájate en la Isla de la Magia con sus 42 playas, lagunas cristalinas y la perfecta combinación de naturaleza y vida nocturna.",
-      price: "Desde $68.700",
-      duration: "4 días / 3 noches",
-      dates: ["18 Mar", "25 Mar", "08 Abr", "22 Abr"],
+        "Vive la auténtica experiencia cubana con sol, playas paradisíacas y la hospitalidad caribeña en un resort todo incluido.",
+      price: "Consultar precios",
+      duration: "11 días / 10 noches",
+      dates: ["18 Oct 2025"],
       rating: 4.6,
-      highlights: ["Playas paradisíacas", "Lagoa da Conceição", "Vida nocturna", "Gastronomía costera"],
-      location: "Florianópolis, Santa Catarina",
-      groupSize: "Máximo 20 personas",
+      highlights: ["All Inclusive", "Playas caribeñas", "Cultura cubana", "Sol y relax"],
+      location: "Cuba",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/cuba.pdf",
+    },
+    {
+      id: 7,
+      name: "Viaje grupal a Perú con Machu Picchu",
+      image: "/peru.webp",
+      description:
+        "Descubre las maravillas del Imperio Inca y visita la ciudadela sagrada de Machu Picchu en una experiencia cultural única e inolvidable.",
+      price: "Consultar precios",
+      duration: "10 días / 8 noches",
+      dates: ["08 Oct 2025", "24 Oct 2025", "29 Nov 2025", "13 Ene 2026", "10 Feb 2026", "09 Mar 2026", "28 Mar 2026", "13 May 2026"],
+      rating: 5.0,
+      highlights: ["Machu Picchu", "Valle Sagrado", "Cusco", "Patrimonio UNESCO"],
+      location: "Perú",
+      groupSize: "Grupo organizado",
+      type: "premium",
+      pdfUrl: "/pdf/peru.pdf",
+    },
+    {
+      id: 8,
+      name: "Brasil | Florianópolis - Camboriu - Bombinhas",
+      image: "/floripa.webp",
+      description:
+        "Descubre las mejores playas de Brasil en un viaje completo por Florianópolis, Camboriu y Bombinhas. Incluye hotel Palace, bus premium, piscina y excursiones.",
+      price: "Desde $790 USD",
+      duration: "10 días / 7 noches",
+      dates: ["Sep 2025", "Oct 2025", "Nov 2025", "03 Ene 2026", "10 Ene 2026", "17 Ene 2026", "24 Ene 2026", "26 Feb 2026", "05 Mar 2026", "12 Mar 2026", "19 Mar 2026", "26 Mar 2026"],
+      rating: 4.8,
+      highlights: ["Hotel Palace", "Bus Mix Premium", "Piscina", "Desayuno y cena buffet", "Excursiones incluidas"],
+      location: "Santa Catarina, Brasil",
+      groupSize: "Grupo organizado",
+      type: "basic",
+      priceDetails: {
+        "Sep-Nov 2025": "Desde $790 USD",
+        "Enero 2026": "Desde $990 USD",
+        "Febrero 2026": "Desde $990 USD", 
+        "Marzo 2026": "Desde $890 USD"
+      }
+    },
+    {
+      id: 9,
+      name: "Cataratas del Iguazú",
+      image: "/cataratas.webp",
+      description:
+        "Vive la experiencia de las majestuosas Cataratas del Iguazú con bus premium, visita a los Saltos del Mocona, media pensión y compras en Ciudad del Este.",
+      price: "Desde $450 USD",
+      duration: "7 días / 4 noches",
+      dates: ["26 Oct 2025"],
+      rating: 4.9,
+      highlights: ["Bus Mix Premium+", "Saltos del Mocona", "Media pensión", "Coordinador permanente", "Compras Ciudad del Este", "Piscina"],
+      location: "Misiones, Argentina",
+      groupSize: "Grupo organizado",
+      type: "basic",
+    },
+    {
+      id: 10,
+      name: "Una Navidad Distinta en Florianópolis",
+      image: "/navidad.webp",
+      description:
+        "Celebra una Navidad única en las hermosas playas de Florianópolis. Incluye hotel Palace, excursiones a Bombas, Bombinhas y Camboriú, más actividades especiales navideñas.",
+      price: "Desde $890 USD",
+      duration: "10 días / 7 noches",
+      dates: ["20 Dic 2025"],
+      rating: 4.8,
+      highlights: ["Hotel Palace", "Bus Mix Premium", "3 excursiones incluidas", "Media pensión", "Piscina climatizada", "Coordinación permanente"],
+      location: "Florianópolis, Brasil",
+      groupSize: "Grupo organizado",
+      type: "basic",
+    },
+    {
+      id: 11,
+      name: "Año Nuevo en Florianópolis",
+      image: "/añonuevo.webp",
+      description:
+        "Recibe el 2026 en uno de los destinos más mágicos de Brasil. Fiesta de fin de año en la playa con fuegos artificiales, hotel Palace y excursiones incluidas.",
+      price: "Desde $1.300 USD",
+      duration: "10 días / 7 noches",
+      dates: ["27 Dic 2025"],
+      rating: 4.9,
+      highlights: ["Fiesta Año Nuevo", "Hotel Palace", "Bus Mix Premium", "3 excursiones incluidas", "Fuegos artificiales", "Actividades especiales"],
+      location: "Florianópolis, Brasil",
+      groupSize: "Grupo organizado",
+      type: "basic",
     },
   ]
 
   const excursions = [
     {
       id: 1,
-      name: "Cristo Redentor y Pan de Azúcar",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Visita los dos íconos más famosos de Río de Janeiro en un día completo. Sube al Cristo Redentor y disfruta de las vistas panorámicas desde el Pan de Azúcar.",
-      price: "Desde $45.900",
-      duration: "8 horas",
-      rating: 4.9,
-      highlights: ["Transporte incluido", "Guía bilingüe", "Teleférico", "Tren del Corcovado"],
+      name: "Excursión a Camboriú – Día Completo",
+      image: "/camboriu.webp",
+      description: "En Camboriú disfrutamos de un día completo explorando los principales atractivos. Entre las opciones disponibles, podrás relajarte en la hermosa Playa de Laranjeiras, conocida por sus tranquilas aguas cristalinas.",
+      price: "Consultar precio",
+      duration: "Día completo",
+      rating: 4.8,
+      highlights: ["Playa de Laranjeiras", "Parque Unipraias", "Aquarium", "Paseo del Camelódromo"],
       included: [
-        "Transporte hotel-sitios-hotel",
-        "Entradas a Cristo Redentor",
-        "Teleférico Pan de Azúcar",
-        "Guía certificado",
-        "Seguro de viaje",
+        "Visita a Playa de Laranjeiras",
+        "Parque Unipraias con vistas panorámicas",
+        "Recorrido por el Aquarium de Camboriú",
+        "Exploración del Paseo del Camelódromo",
+        "Tiempo libre para compras",
       ],
-      location: "Río de Janeiro, RJ",
+      location: "Camboriú, Santa Catarina",
       difficulty: "Fácil",
     },
     {
       id: 2,
-      name: "Navegación Bahía de Guanabara",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Descubre Río desde el agua con una navegación por la hermosa Bahía de Guanabara, con vistas únicas del Pan de Azúcar y el Cristo Redentor.",
-      price: "Desde $35.500",
-      duration: "3 horas",
-      rating: 4.8,
-      highlights: ["Catamarán", "Bebidas incluidas", "Vistas panorámicas", "Puesta de sol"],
+      name: "Excursión a Bombinhas – Tour de Playas",
+      image: "/bombinhas.webp",
+      description: "Tour da Praias en Bombinhas, una de las joyas del litoral brasileño. Durante todo el día recorreremos las playas más destacadas de esta paradisíaca región, comenzando por Praia de Bombas y Praia de Bombinhas.",
+      price: "Consultar precio",
+      duration: "Día completo",
+      rating: 4.9,
+      highlights: ["5 playas diferentes", "Caminata costera", "Aguas cristalinas", "Snorkel con peces"],
       included: [
-        "Navegación en catamarán",
-        "Bebidas a bordo",
-        "Aperitivos",
-        "Guía náutico",
-        "Chaleco salvavidas",
+        "Visita a Praia de Bombas y Praia de Bombinhas",
+        "Recorrido por Praia do Ribeiro y Praia Trapiche",
+        "Caminata por senderos costeros en Praia da Lagoinha",
+        "Experiencia de snorkel con peces",
+        "Tiempo libre en cada playa",
       ],
-      location: "Marina da Glória, RJ",
+      location: "Bombinhas, Santa Catarina",
       difficulty: "Fácil",
     },
     {
       id: 3,
-      name: "Trilha Pedra da Gávea",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Aventura épica subiendo a la Pedra da Gávea, una de las rocas más altas del mundo junto al mar. Para aventureros experimentados.",
-      price: "Desde $78.900",
-      duration: "6 horas",
+      name: "Excursión a Barra da Lagoa – Día de Playa y Naturaleza",
+      image: "/lagoa.webp",
+      description: "Ubicada en el este de la isla de Florianópolis, Barra da Lagoa es una de las playas más encantadoras y auténticas de la región. Esta excursión te invita a disfrutar de un día completo en un entorno natural rústico y reservado.",
+      price: "Consultar precio",
+      duration: "Día completo",
       rating: 4.7,
-      highlights: ["Trekking extremo", "Vistas espectaculares", "Rappel opcional", "Certificado"],
+      highlights: ["Playa auténtica", "Piscinas naturales", "Centro pintoresco", "Aguas cristalinas"],
       included: [
-        "Guía especializado en montaña",
-        "Equipo de seguridad",
-        "Snack energético",
-        "Agua",
-        "Certificado de logro",
+        "Recorrido por el centro pintoresco",
+        "Tiempo libre en la playa principal",
+        "Caminata hacia las piscinas naturales",
+        "Baño en formaciones rocosas naturales",
+        "Experiencia de desconexión total",
       ],
-      location: "Barra da Tijuca, RJ",
-      difficulty: "Difícil",
-    },
-    {
-      id: 4,
-      name: "City Tour Histórico Salvador",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Recorre el centro histórico de Salvador, Patrimonio de la Humanidad, conociendo el Pelourinho, iglesias coloniales y la rica cultura bahiana.",
-      price: "Desde $28.700",
-      duration: "4 horas",
-      rating: 4.8,
-      highlights: ["Pelourinho", "Iglesias históricas", "Mercado Modelo", "Elevador Lacerda"],
-      included: [
-        "Transporte con A/C",
-        "Guía historiador",
-        "Entradas a iglesias",
-        "Degustación de dulces típicos",
-        "Tiempo libre para compras",
-      ],
-      location: "Salvador, Bahía",
+      location: "Barra da Lagoa, Florianópolis",
       difficulty: "Fácil",
     },
     {
-      id: 5,
-      name: "Safari Fotográfico Pantanal",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Explora la biodiversidad del Pantanal en un safari fotográfico, observando jaguares, caimanes y una increíble variedad de aves.",
-      price: "Desde $125.900",
-      duration: "12 horas",
+      id: 4,
+      name: "Excursión a Isla do Campeche – Naturaleza, Aventura y Relax",
+      image: "/campeche.webp",
+      description: "La Isla do Campeche es una exclusiva reserva ecológica ubicada frente a la costa de Florianópolis, reconocida por su imponente belleza natural. Este paraíso se destaca por sus aguas cristalinas de tono turquesa.",
+      price: "R$ 300",
+      duration: "Día completo",
       rating: 5.0,
-      highlights: ["Jaguares", "Observación de aves", "Fotógrafo guía", "Almuerzo típico"],
+      highlights: ["Reserva ecológica", "Aguas turquesas", "Sendero ecológico", "Inscripciones rupestres"],
       included: [
-        "Transporte 4x4",
-        "Guía fotógrafo profesional",
-        "Almuerzo pantaneiro",
-        "Equipo de observación",
-        "Agua y snacks",
+        "Transporte marítimo ida y vuelta",
+        "Sendero ecológico guiado (1 hora)",
+        "Actividades acuáticas opcionales (kayak, snorkel, SUP)",
+        "Acceso al restaurante de la isla",
+        "Observación de fauna silvestre (coatis)",
       ],
-      location: "Pantanal, Mato Grosso",
+      location: "Isla do Campeche, Florianópolis",
       difficulty: "Moderado",
     },
     {
-      id: 6,
-      name: "Mergulho em Fernando de Noronha",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Descubre el paraíso submarino de Fernando de Noronha con inmersiones en aguas cristalinas llenas de vida marina tropical.",
-      price: "Desde $89.500",
-      duration: "6 horas",
-      rating: 4.9,
-      highlights: ["Buceo certificado", "Vida marina", "Aguas cristalinas", "Equipo completo"],
+      id: 5,
+      name: "Barco Pirata – Diversión asegurada!",
+      image: "/barco.webp",
+      description: "¡Subite al Barco Pirata y viví una experiencia única a pura música, juegos y alegría en el mar! Durante este paseo inolvidable, vas a disfrutar de una fiesta flotante con animación, baile, desafíos por caipirinhas y paradas para nadar.",
+      price: "R$ 180",
+      duration: "Día completo",
+      rating: 4.6,
+      highlights: ["Fiesta flotante", "Animación a bordo", "Bahía de los Delfines", "Buffet de mariscos"],
       included: [
-        "Dos inmersiones",
-        "Equipo completo de buceo",
-        "Instructor certificado",
-        "Transporte marítimo",
-        "Refrigerio",
+        "Salida desde muelle de Canasvieiras",
+        "Vista panorámica de playas exclusivas",
+        "Observación del histórico Fuerte de São José",
+        "Navegación hacia Isla de Anhatomirim",
+        "Avistaje de la Bahía de los Delfines",
+        "Parada para almorzar en Costeira da Armação",
+        "Tiempo libre para nadar en mar abierto",
       ],
-      location: "Fernando de Noronha, PE",
-      difficulty: "Moderado",
+      location: "Canasvieiras, Florianópolis",
+      difficulty: "Fácil",
+    },
+    {
+      id: 6,
+      name: "Beto Carrero World – Diversión total",
+      image: "/beto.webp",
+      description: "Viví un día completo a pura emoción en Beto Carrero World, el parque temático más grande de América Latina, ubicado en Penha, Santa Catarina. Este increíble parque combina adrenalina, espectáculos en vivo y naturaleza.",
+      price: "R$ 260",
+      duration: "Día completo (7hs a 22hs)",
+      rating: 4.8,
+      highlights: ["Parque más grande de América Latina", "Montaña rusa FireWhip", "Show de Hot Wheels", "Zoológico con 700 animales"],
+      included: [
+        "Entrada al parque",
+        "Traslado ida y vuelta",
+        "Acceso a todas las atracciones",
+        "Espectáculos en vivo (Madagascar, Hot Wheels)",
+        "Acceso al zoológico",
+        "Múltiples opciones gastronómicas disponibles",
+      ],
+      location: "Penha, Santa Catarina",
+      difficulty: "Fácil",
     },
   ]
 
@@ -242,20 +349,20 @@ export function Packages() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {packages.map((pkg) => (
             <div
               key={pkg.id}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:-translate-y-2 flex flex-col"
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 flex flex-col h-full"
             >
               {/* Image */}
               <div className="relative overflow-hidden">
                 <Image
                   src={pkg.image || "/placeholder.svg"}
                   alt={pkg.name}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  width={600}
+                  height={400}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
                   <Star className="h-4 w-4 text-travel-gold fill-current" />
@@ -267,17 +374,23 @@ export function Packages() {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex flex-col justify-between flex-1">
-                <h3 className="font-montserrat text-2xl font-bold text-travel-blue mb-2 group-hover:text-travel-gold transition-colors duration-300">
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="font-montserrat text-2xl font-bold text-travel-blue mb-3 group-hover:text-travel-gold transition-colors duration-300">
                   {pkg.name}
                 </h3>
+
                 <div className="flex items-center space-x-4 mb-4 text-sm text-gray-600">
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 mr-1 text-travel-gold" />
                     {pkg.location}
                   </div>
+                  <div className="flex items-center">
+                    <Users className="h-4 w-4 mr-1 text-travel-gold" />
+                    {pkg.groupSize}
+                  </div>
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">{pkg.description}</p>
+
+                <p className="text-gray-600 mb-4 leading-relaxed flex-1">{pkg.description}</p>
 
                 {/* Highlights */}
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -292,7 +405,7 @@ export function Packages() {
                 </div>
 
                 {/* Dates */}
-                <div className="mb-4">
+                <div className="mb-6">
                   <div className="flex items-center mb-2">
                     <Calendar className="h-4 w-4 text-travel-gold mr-2" />
                     <span className="text-sm font-semibold text-gray-700">Próximas salidas:</span>
@@ -328,13 +441,18 @@ export function Packages() {
                 </div>
 
                 {/* Price and CTA */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div>
-                    <span className="text-2xl font-bold text-travel-blue">{pkg.price}</span>
-                    <span className="text-sm text-gray-500 block">por persona</span>
-                  </div>
-                  <Button className="bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md">
-                    Consultar
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
+                  {pkg.price !== "Consultar precios" && (
+                    <div>
+                      <span className="text-2xl font-bold text-travel-blue">{pkg.price}</span>
+                      <span className="text-sm text-gray-500 block">por persona</span>
+                    </div>
+                  )}
+                  <Button 
+                    onClick={() => handlePackageAction(pkg)}
+                    className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${pkg.price === "Consultar precios" ? "ml-auto" : ""}`}
+                  >
+                    {pkg.type === "basic" ? "Consultar más información" : "Ver Itinerario y Precios"}
                   </Button>
                 </div>
               </div>
@@ -344,7 +462,7 @@ export function Packages() {
       </div>
 
       {/* Excursions Section */}
-      <div className="py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+      <div className="mt-8 py-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-0 w-80 h-80 bg-travel-gold rounded-full -translate-x-40 -translate-y-20"></div>
@@ -354,10 +472,10 @@ export function Packages() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-travel-blue mb-4">
-              Excursiones Populares
+              Excursiones en Santa Catarina
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Complementa tu viaje con experiencias únicas, desde aventuras extremas hasta tours culturales
+              Complementa tu estadía en Florianópolis y alrededores con experiencias únicas: playas paradisíacas, parques temáticos y aventuras naturales
             </p>
           </div>
 
@@ -429,10 +547,10 @@ export function Packages() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => toggleExcursionExpanded()}
+                      onClick={() => toggleExcursion()}
                       className="text-travel-blue hover:text-travel-gold text-sm p-0 h-auto font-semibold"
                     >
-                      {allExcursionsExpanded ? (
+                      {expandedExcursions ? (
                         <>
                           Ver menos información <ChevronUp className="ml-1 h-4 w-4" />
                         </>
@@ -445,7 +563,7 @@ export function Packages() {
                   </div>
 
                   {/* Expanded Content */}
-                  {allExcursionsExpanded && (
+                  {expandedExcursions && (
                     <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
                       <h4 className="font-montserrat font-bold text-travel-blue mb-3 flex items-center">
                         <Camera className="h-4 w-4 mr-2" />
@@ -464,12 +582,17 @@ export function Packages() {
 
                   {/* Price and CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
-                    <div>
-                      <span className="text-xl font-bold text-travel-blue">{excursion.price}</span>
-                      <span className="text-sm text-gray-500 block">por persona</span>
-                    </div>
-                    <Button className="bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md">
-                      Consultar
+                    {excursion.price !== "Consultar precios" && (
+                      <div>
+                        <span className="text-lg font-bold text-travel-blue">{excursion.price}</span>
+                        <span className="text-sm text-gray-500 block">por persona</span>
+                      </div>
+                    )}
+                    <Button 
+                      onClick={() => window.open('https://wa.link/diii0m', '_blank')}
+                      className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}
+                    >
+                      Consulta ahora
                     </Button>
                   </div>
                 </div>

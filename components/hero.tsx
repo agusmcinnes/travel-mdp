@@ -74,18 +74,7 @@ export function Hero() {
           </Link>
         </div>
 
-        {/* Slide indicators */}
-        <div className="flex justify-center space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? "bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 scale-125" : "bg-white/50 hover:bg-white/75"
-              }`}
-            />
-          ))}
-        </div>
+
       </div>
 
       {/* Floating elements */}
