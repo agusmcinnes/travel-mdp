@@ -116,7 +116,7 @@ export function Footer() {
         <div className="border-t-2 border-blue-900">
           <div className="mx-auto flex justify-center px-4 sm:px-6 lg:px-8 py-6">
               <p className="text-blue-100 text-sm">
-                © {currentYear} Travel Mar del Plata. Todos los derechos reservados.
+                © {currentYear} Travel Group Mar del Plata. Todos los derechos reservados.
               </p>
           </div>
         </div>

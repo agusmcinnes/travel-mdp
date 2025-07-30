@@ -13,7 +13,7 @@ export function Hero() {
     {
       image: "/pileta_palace.webp",
       title: "Descubre Brasil",
-      subtitle: "con Travel Mar del Plata",
+      subtitle: "con Travel Group Mar del Plata",
     }
   ]
 
@@ -49,7 +49,7 @@ export function Hero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
-            ¡Viví la increíble Experiencia Travel Mar Del Plata. Descubrí Una Aventura Inolvidable!
+            ¡Viví la increíble Experiencia Travel Group Mar Del Plata. Descubrí Una Aventura Inolvidable!
           </p>
         </div>
 
