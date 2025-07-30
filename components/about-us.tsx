@@ -46,7 +46,7 @@ export function AboutUs() {
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="text-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                 <Heart className="h-8 w-8 text-travel-gold mx-auto mb-2" />
-                <div className="font-bold text-2xl text-travel-blue">500+</div>
+                <div className="font-bold text-2xl text-travel-blue">1500+</div>
                 <div className="text-sm text-gray-600">Familias Felices</div>
               </div>
               <div className="text-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
@@ -56,7 +56,7 @@ export function AboutUs() {
               </div>
               <div className="text-center p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                 <Star className="h-8 w-8 text-travel-gold mx-auto mb-2" />
-                <div className="font-bold text-2xl text-travel-blue">15</div>
+                <div className="font-bold text-2xl text-travel-blue">10</div>
                 <div className="text-sm text-gray-600">Años de Experiencia</div>
               </div>
             </div>
