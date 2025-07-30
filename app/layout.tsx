@@ -18,7 +18,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Travel Mar del Plata - Tu Agencia de Viajes de Confianza",
   description:
-    "Descubre el mundo con Travel Mar del Plata. Paquetes únicos, experiencias inolvidables y el mejor servicio personalizado para tus vacaciones soñadas.",}
+    "Descubre el mundo con Travel Mar del Plata. Paquetes únicos, experiencias inolvidables y el mejor servicio personalizado para tus vacaciones soñadas.",
+  icons: {
+    icon: '/favicon.ico',
+  },
+}
 
 export default function RootLayout({
   children,
