@@ -3,6 +3,7 @@ import { Advantages } from "@/components/advantages"
 import { AboutUs } from "@/components/about-us"
 import { Packages } from "@/components/packages"
 import { Contact } from "@/components/contact"
+import { Hotels } from "@/components/hotels"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Advantages />
       <AboutUs />
       <Packages />
+      <Hotels />
       <Contact />
     </main>
   )
