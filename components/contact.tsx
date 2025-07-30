@@ -45,8 +45,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-travel-blue text-lg">Teléfono</p>
-                    <p className="text-gray-600">+54 223 456-7890</p>
-                    <p className="text-gray-600">WhatsApp: +54 9 223 456-7890</p>
+                    <p className="text-gray-600">0223-15-541-2702</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -68,13 +67,15 @@ export function Contact() {
                 <h3 className="font-montserrat text-2xl font-bold text-travel-blue mb-6">Síguenos en redes</h3>
                 <div className="flex space-x-4 mb-6">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/p/Travel-Mar-Del-Plata-100063552577660/"
+                    target="_blank"
                     className="bg-travel-gold hover:bg-travel-gold/80 p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-md"
                   >
                     <Facebook className="h-6 w-6 text-travel-blue" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/travelgroupmardelplata/?hl=en"
+                    target="_blank"
                     className="bg-travel-gold hover:bg-travel-gold/80 p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-md"
                   >
                     <Instagram className="h-6 w-6 text-travel-blue" />

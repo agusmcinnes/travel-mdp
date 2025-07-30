@@ -7,13 +7,17 @@ import { Calendar, Star, ChevronDown, ChevronUp, MapPin, Users, Clock, Camera } 
 
 export function PackagesPage() {
   const [expandedDates, setExpandedDates] = useState<{ [key: number]: boolean }>({})
-  const [allExcursionsExpanded, setAllExcursionsExpanded] = useState<boolean>(false)
+  const [expandedExcursions, setExpandedExcursions] = useState(false)
 
   const toggleDates = (packageId: number) => {
     setExpandedDates(prev => ({
       ...prev,
       [packageId]: !prev[packageId]
     }))
+  }
+
+  const toggleExcursion = () => {
+    setExpandedExcursions(prev => !prev)
   }
 
   const handlePackageAction = (pkg: any) => {
@@ -206,142 +210,141 @@ export function PackagesPage() {
     },
   ]
 
-  const toggleExcursionExpanded = () => {
-    setAllExcursionsExpanded(!allExcursionsExpanded)
-  }
-
   const excursions = [
     {
       id: 1,
-      name: "Cristo Redentor y Pan de Azúcar",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Visita los dos íconos más famosos de Río de Janeiro en un día completo. Sube al Cristo Redentor y disfruta de las vistas panorámicas desde el Pan de Azúcar.",
-      price: "Desde $45.900",
-      duration: "8 horas",
-      dates: ["Diario", "Horarios múltiples"],
-      allDates: ["09:00", "10:00", "11:00", "13:00", "14:00", "15:00"],
-      rating: 4.9,
-      highlights: ["Transporte incluido", "Guía bilingüe", "Teleférico", "Tren del Corcovado"],
+      name: "Excursión a Camboriú – Día Completo",
+      image: "/camboriu.webp",
+      description: "En Camboriú disfrutamos de un día completo explorando los principales atractivos. Entre las opciones disponibles, podrás relajarte en la hermosa Playa de Laranjeiras, conocida por sus tranquilas aguas cristalinas.",
+      price: "Consultar precio",
+      duration: "Día completo",
+      dates: ["Diario"],
+      allDates: ["08:00"],
+      rating: 4.8,
+      highlights: ["Playa de Laranjeiras", "Parque Unipraias", "Aquarium", "Paseo del Camelódromo"],
       included: [
-        "Transporte hotel-sitios-hotel",
-        "Entradas a Cristo Redentor",
-        "Teleférico Pan de Azúcar",
-        "Guía certificado",
-        "Seguro de viaje",
+        "Visita a Playa de Laranjeiras",
+        "Parque Unipraias con vistas panorámicas",
+        "Recorrido por el Aquarium de Camboriú",
+        "Exploración del Paseo del Camelódromo",
+        "Tiempo libre para compras",
       ],
-      location: "Río de Janeiro, RJ",
-      groupSize: "Máximo 15 personas",
+      location: "Camboriú, Santa Catarina",
+      groupSize: "Grupo organizado",
       difficulty: "Fácil",
     },
     {
       id: 2,
-      name: "Navegación Bahía de Guanabara",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Descubre Río desde el agua con una navegación por la hermosa Bahía de Guanabara, con vistas únicas del Pan de Azúcar y el Cristo Redentor.",
-      price: "Desde $35.500",
-      duration: "3 horas",
-      dates: ["Martes a Domingo"],
-      allDates: ["09:00", "14:00", "16:00"],
-      rating: 4.8,
-      highlights: ["Catamarán", "Bebidas incluidas", "Vistas panorámicas", "Puesta de sol"],
+      name: "Excursión a Bombinhas – Tour de Playas",
+      image: "/bombinhas.webp",
+      description: "Tour da Praias en Bombinhas, una de las joyas del litoral brasileño. Durante todo el día recorreremos las playas más destacadas de esta paradisíaca región, comenzando por Praia de Bombas y Praia de Bombinhas.",
+      price: "Consultar precio",
+      duration: "Día completo",
+      dates: ["Diario"],
+      allDates: ["08:00"],
+      rating: 4.9,
+      highlights: ["5 playas diferentes", "Caminata costera", "Aguas cristalinas", "Snorkel con peces"],
       included: [
-        "Navegación en catamarán",
-        "Bebidas a bordo",
-        "Aperitivos",
-        "Guía náutico",
-        "Chaleco salvavidas",
+        "Visita a Praia de Bombas y Praia de Bombinhas",
+        "Recorrido por Praia do Ribeiro y Praia Trapiche",
+        "Caminata por senderos costeros en Praia da Lagoinha",
+        "Experiencia de snorkel con peces",
+        "Tiempo libre en cada playa",
       ],
-      location: "Marina da Glória, RJ",
-      groupSize: "Máximo 40 personas",
+      location: "Bombinhas, Santa Catarina",
+      groupSize: "Grupo organizado",
       difficulty: "Fácil",
     },
     {
       id: 3,
-      name: "Trilha Pedra da Gávea",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Aventura épica subiendo a la Pedra da Gávea, una de las rocas más altas del mundo junto al mar. Para aventureros experimentados.",
-      price: "Desde $78.900",
-      duration: "6 horas",
-      dates: ["Sábados y Domingos"],
-      allDates: ["06:00", "07:00"],
+      name: "Excursión a Barra da Lagoa – Día de Playa y Naturaleza",
+      image: "/lagoa.webp",
+      description: "Ubicada en el este de la isla de Florianópolis, Barra da Lagoa es una de las playas más encantadoras y auténticas de la región. Esta excursión te invita a disfrutar de un día completo en un entorno natural rústico y reservado.",
+      price: "Consultar precio",
+      duration: "Día completo",
+      dates: ["Diario"],
+      allDates: ["08:00"],
       rating: 4.7,
-      highlights: ["Trekking extremo", "Vistas espectaculares", "Rappel opcional", "Certificado"],
+      highlights: ["Playa auténtica", "Piscinas naturales", "Centro pintoresco", "Aguas cristalinas"],
       included: [
-        "Guía especializado en montaña",
-        "Equipo de seguridad",
-        "Snack energético",
-        "Agua",
-        "Certificado de logro",
+        "Recorrido por el centro pintoresco",
+        "Tiempo libre en la playa principal",
+        "Caminata hacia las piscinas naturales",
+        "Baño en formaciones rocosas naturales",
+        "Experiencia de desconexión total",
       ],
-      location: "Barra da Tijuca, RJ",
-      groupSize: "Máximo 8 personas",
-      difficulty: "Difícil",
-    },
-    {
-      id: 4,
-      name: "City Tour Histórico Salvador",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Recorre el centro histórico de Salvador, Patrimonio de la Humanidad, conociendo el Pelourinho, iglesias coloniales y la rica cultura bahiana.",
-      price: "Desde $28.700",
-      duration: "4 horas",
-      dates: ["Lunes a Sábado"],
-      allDates: ["09:00", "14:00"],
-      rating: 4.8,
-      highlights: ["Pelourinho", "Iglesias históricas", "Mercado Modelo", "Elevador Lacerda"],
-      included: [
-        "Transporte con A/C",
-        "Guía historiador",
-        "Entradas a iglesias",
-        "Degustación de dulces típicos",
-        "Tiempo libre para compras",
-      ],
-      location: "Salvador, Bahía",
-      groupSize: "Máximo 20 personas",
+      location: "Barra da Lagoa, Florianópolis",
+      groupSize: "Grupo organizado",
       difficulty: "Fácil",
     },
     {
-      id: 5,
-      name: "Safari Fotográfico Pantanal",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Explora la biodiversidad del Pantanal en un safari fotográfico, observando jaguares, caimanes y una increíble variedad de aves.",
-      price: "Desde $125.900",
-      duration: "12 horas",
-      dates: ["Miércoles a Domingo"],
-      allDates: ["05:00"],
+      id: 4,
+      name: "Excursión a Isla do Campeche – Naturaleza, Aventura y Relax",
+      image: "/campeche.webp",
+      description: "La Isla do Campeche es una exclusiva reserva ecológica ubicada frente a la costa de Florianópolis, reconocida por su imponente belleza natural. Este paraíso se destaca por sus aguas cristalinas de tono turquesa.",
+      price: "R$ 300",
+      duration: "Día completo",
+      dates: ["Martes a Domingo"],
+      allDates: ["08:00"],
       rating: 5.0,
-      highlights: ["Jaguares", "Observación de aves", "Fotógrafo guía", "Almuerzo típico"],
+      highlights: ["Reserva ecológica", "Aguas turquesas", "Sendero ecológico", "Inscripciones rupestres"],
       included: [
-        "Transporte 4x4",
-        "Guía fotógrafo profesional",
-        "Almuerzo pantaneiro",
-        "Equipo de observación",
-        "Agua y snacks",
+        "Transporte marítimo ida y vuelta",
+        "Sendero ecológico guiado (1 hora)",
+        "Actividades acuáticas opcionales (kayak, snorkel, SUP)",
+        "Acceso al restaurante de la isla",
+        "Observación de fauna silvestre (coatis)",
       ],
-      location: "Pantanal, Mato Grosso",
-      groupSize: "Máximo 6 personas",
+      location: "Isla do Campeche, Florianópolis",
+      groupSize: "Grupo organizado",
       difficulty: "Moderado",
     },
     {
-      id: 6,
-      name: "Mergulho em Fernando de Noronha",
-      image: "/placeholder.svg?height=400&width=600",
-      description: "Descubre el paraíso submarino de Fernando de Noronha con inmersiones en aguas cristalinas llenas de vida marina tropical.",
-      price: "Desde $89.500",
-      duration: "6 horas",
-      dates: ["Martes a Sábado"],
-      allDates: ["08:00", "13:00"],
-      rating: 4.9,
-      highlights: ["Buceo certificado", "Vida marina", "Aguas cristalinas", "Equipo completo"],
+      id: 5,
+      name: "Barco Pirata – Diversión asegurada!",
+      image: "/barco.webp",
+      description: "¡Subite al Barco Pirata y viví una experiencia única a pura música, juegos y alegría en el mar! Durante este paseo inolvidable, vas a disfrutar de una fiesta flotante con animación, baile, desafíos por caipirinhas y paradas para nadar.",
+      price: "R$ 180",
+      duration: "Día completo",
+      dates: ["Diario"],
+      allDates: ["08:00"],
+      rating: 4.6,
+      highlights: ["Fiesta flotante", "Animación a bordo", "Bahía de los Delfines", "Buffet de mariscos"],
       included: [
-        "Dos inmersiones",
-        "Equipo completo de buceo",
-        "Instructor certificado",
-        "Transporte marítimo",
-        "Refrigerio",
+        "Salida desde muelle de Canasvieiras",
+        "Vista panorámica de playas exclusivas",
+        "Observación del histórico Fuerte de São José",
+        "Navegación hacia Isla de Anhatomirim",
+        "Avistaje de la Bahía de los Delfines",
+        "Parada para almorzar en Costeira da Armação",
+        "Tiempo libre para nadar en mar abierto",
       ],
-      location: "Fernando de Noronha, PE",
-      groupSize: "Máximo 10 personas",
-      difficulty: "Moderado",
+      location: "Canasvieiras, Florianópolis",
+      groupSize: "Grupo organizado",
+      difficulty: "Fácil",
+    },
+    {
+      id: 6,
+      name: "Beto Carrero World – Diversión total",
+      image: "/beto.webp",
+      description: "Viví un día completo a pura emoción en Beto Carrero World, el parque temático más grande de América Latina, ubicado en Penha, Santa Catarina. Este increíble parque combina adrenalina, espectáculos en vivo y naturaleza.",
+      price: "R$ 260",
+      duration: "Día completo (7hs a 22hs)",
+      dates: ["Miércoles a Domingo"],
+      allDates: ["07:00"],
+      rating: 4.8,
+      highlights: ["Parque más grande de América Latina", "Montaña rusa FireWhip", "Show de Hot Wheels", "Zoológico con 700 animales"],
+      included: [
+        "Entrada al parque",
+        "Traslado ida y vuelta",
+        "Acceso a todas las atracciones",
+        "Espectáculos en vivo (Madagascar, Hot Wheels)",
+        "Acceso al zoológico",
+        "Múltiples opciones gastronómicas disponibles",
+      ],
+      location: "Penha, Santa Catarina",
+      groupSize: "Grupo organizado",
+      difficulty: "Fácil",
     },
   ]
 
@@ -372,7 +375,7 @@ export function PackagesPage() {
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 flex flex-col h-full"
               >
                 {/* Image */}
                 <div className="relative overflow-hidden">
@@ -393,7 +396,7 @@ export function PackagesPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="font-montserrat text-2xl font-bold text-travel-blue mb-3 group-hover:text-travel-gold transition-colors duration-300">
                     {pkg.name}
                   </h3>
@@ -409,7 +412,7 @@ export function PackagesPage() {
                     </div>
                   </div>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed">{pkg.description}</p>
+                  <p className="text-gray-600 mb-4 leading-relaxed flex-1">{pkg.description}</p>
 
                   {/* Highlights */}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -460,7 +463,7 @@ export function PackagesPage() {
                   </div>
 
                   {/* Price and CTA */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                     {pkg.price !== "Consultar precios" && (
                       <div>
                         <span className="text-2xl font-bold text-travel-blue">{pkg.price}</span>
@@ -492,10 +495,10 @@ export function PackagesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-travel-blue mb-4">
-              Excursiones y Actividades
+              Excursiones en Santa Catarina
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Vive experiencias únicas con nuestras excursiones especializadas, desde aventuras extremas hasta tours culturales
+              Complementa tu estadía en Florianópolis y alrededores con experiencias únicas: playas paradisíacas, parques temáticos y aventuras naturales
             </p>
           </div>
 
@@ -567,10 +570,10 @@ export function PackagesPage() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => toggleExcursionExpanded()}
+                      onClick={() => toggleExcursion()}
                       className="text-travel-blue hover:text-travel-gold text-sm p-0 h-auto font-semibold"
                     >
-                      {allExcursionsExpanded ? (
+                      {expandedExcursions ? (
                         <>
                           Ver menos información <ChevronUp className="ml-1 h-4 w-4" />
                         </>
@@ -583,7 +586,7 @@ export function PackagesPage() {
                   </div>
 
                   {/* Expanded Content */}
-                  {allExcursionsExpanded && (
+                  {expandedExcursions && (
                     <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
                       <h4 className="font-montserrat font-bold text-travel-blue mb-3 flex items-center">
                         <Camera className="h-4 w-4 mr-2" />
@@ -604,12 +607,12 @@ export function PackagesPage() {
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                     {excursion.price !== "Consultar precios" && (
                       <div>
-                        <span className="text-xl font-bold text-travel-blue">{excursion.price}</span>
+                        <span className="text-lg font-bold text-travel-blue">{excursion.price}</span>
                         <span className="text-sm text-gray-500 block">por persona</span>
                       </div>
                     )}
                     <Button className={`bg-travel-gold hover:bg-travel-gold/90 text-travel-blue font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-md ${excursion.price === "Consultar precios" ? "ml-auto" : ""}`}>
-                      Ver Itinerario y Precios
+                      Consulta ahora
                     </Button>
                   </div>
                 </div>

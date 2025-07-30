@@ -17,7 +17,7 @@ export function Advantages() {
     },
     {
       icon: Award,
-      title: "15 Años de Experiencia",
+      title: "10 Años de Experiencia",
       description: "Somos líderes en turismo. Miles de viajeros han confiado en nosotros para sus mejores vacaciones.",
     },
     {
