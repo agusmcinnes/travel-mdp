@@ -43,7 +43,9 @@ export function Hero() {
         <div className="mb-8 animate-fade-in">
           <MapPin className="h-12 w-12 text-transparent bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 bg-clip-text mx-auto mb-4 animate-bounce" />
           <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontSize: 'clamp(2.25rem, 7vw, 2.8rem)' }}>
-            {slides[currentSlide].title}
+            Descubrí el Paraíso
+            <br />
+            Travel Group Mar del Plata
             <span className="block text-travel-gold text-3xl md:text-5xl lg:text-6xl mt-2 font-bold" style={{ fontSize: 'clamp(1.375rem, 6vw, 1.75rem)' }}>
               {slides[currentSlide].subtitle}
             </span>
