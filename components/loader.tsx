@@ -25,7 +25,7 @@ export function Loader() {
           </div>
           <div className="absolute inset-0 w-20 h-20 bg-travel-gold/30 rounded-full animate-ping"></div>
         </div>
-        <h2 className="font-playfair text-2xl font-bold text-white mb-2">Travel Mar del Plata</h2>
+        <h2 className="font-playfair text-2xl font-bold text-white mb-2">Travel Group Mar del Plata</h2>
         <p className="text-blue-100">Preparando tu próxima aventura...</p>
         <div className="mt-6 flex justify-center">
           <div className="flex space-x-1">

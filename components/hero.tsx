@@ -12,8 +12,8 @@ export function Hero() {
   const slides = [
     {
       image: "/pileta_palace.webp",
-      title: "Descubre Brasil",
-      subtitle: "con Travel Group Mar del Plata",
+      title: "Descubrí el Paraíso Travel Group Mar del Plata",
+      subtitle: "¡Viví la increíble experiencia!",
     }
   ]
 
@@ -42,14 +42,15 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-8 animate-fade-in">
           <MapPin className="h-12 w-12 text-transparent bg-gradient-to-r from-yellow-400 via-travel-gold to-amber-500 bg-clip-text mx-auto mb-4 animate-bounce" />
-          <h1 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontSize: 'clamp(2.25rem, 8vw, 3.5rem)' }}>
+          <h1 className="font-montserrat text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontSize: 'clamp(2.25rem, 7vw, 2.8rem)' }}>
             {slides[currentSlide].title}
-            <span className="block text-travel-gold text-3xl md:text-5xl lg:text-6xl mt-2 font-bold" style={{ fontSize: 'clamp(1.875rem, 6vw, 2.75rem)' }}>
+            <span className="block text-travel-gold text-3xl md:text-5xl lg:text-6xl mt-2 font-bold" style={{ fontSize: 'clamp(1.375rem, 6vw, 1.75rem)' }}>
               {slides[currentSlide].subtitle}
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
-            ¡Viví la increíble Experiencia Travel Group Mar Del Plata. Descubrí Una Aventura Inolvidable!
+            Viaja y disfruta de nuestros paquetes completos 
+
           </p>
         </div>
 

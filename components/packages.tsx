@@ -33,8 +33,8 @@ export function Packages() {
   const packages = [
     {
       id: 8,
-      name: "Brasil | Florianópolis - Camboriu - Bombinhas",
-      image: "/travel_pileta.webp",
+      name: "Brasil | Florianópolis - Camboriu - Bombinhas | TODO EL AÑO",
+      image: "/pareja_palace.jpg",
       description:
         "Descubre las mejores playas de Brasil en un viaje completo por Florianópolis, Camboriu y Bombinhas. Incluye hotel Palace, bus premium, piscina y excursiones.",
       price: "Desde $790 USD",

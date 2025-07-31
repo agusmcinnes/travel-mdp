@@ -25,6 +25,7 @@ export function Hotels() {
       name: 'Hotel Palace 1',
       location: 'Canasvieiras, Brasil',
       images: [
+        'pareja_palace.jpg',
         '/card_palace_3.webp',
         '/card_palace_2.webp',
         '/card_palace_1.webp',

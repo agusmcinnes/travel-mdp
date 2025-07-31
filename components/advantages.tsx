@@ -6,9 +6,9 @@ export function Advantages() {
   const advantages = [
     {
       icon: Shield,
-      title: "Seguridad Garantizada",
+      title: "Seguridad",
       description:
-        "Viaja con total tranquilidad. Todos nuestros paquetes incluyen seguros completos y asistencia 24/7.",
+        "Viajá con total tranquilidad. Contamos con seguros completos y asistencia al viajero 24/7, que podés contratar como servicio adicional para tu viaje.",
     },
     {
       icon: Users,
@@ -41,7 +41,8 @@ export function Advantages() {
             ¿Por qué elegir Travel Mar del Plata?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Somos más que una agencia de viajes, somos tus compañeros de aventura
+            Somos más que una agencia somos la historia que vas a contar
+
           </p>
         </div>
 
