@@ -30,10 +30,11 @@ export function Packages() {
       window.open('https://wa.link/diii0m', '_blank')
     }
   }
+
   const packages = [
     {
       id: 8,
-      name: "Brasil | Florianópolis - Camboriu - Bombinhas | TODO EL AÑO",
+      name: "Brasil | Florianópolis - Camboriu - Bombinhas",
       image: "/pareja_palace.jpg",
       description:
         "Descubre las mejores playas de Brasil en un viaje completo por Florianópolis, Camboriu y Bombinhas. Incluye hotel Palace, bus premium, piscina y excursiones.",
@@ -103,7 +104,7 @@ export function Packages() {
       image: "/rio.webp",
       description:
         "Descubre la ciudad maravillosa de Río de Janeiro y relájate en las sofisticadas playas de Búzios. La combinación perfecta entre ciudad y playa.",
-      price: "Consultar precios",
+      price: "Desde $1.449 USD",
       duration: "11 días / 10 noches",
       dates: ["01 Oct 2025", "25 Nov 2025"],
       rating: 4.8,
@@ -119,7 +120,7 @@ export function Packages() {
       image: "/dubai.webp",
       description:
         "Vive una experiencia única de fin de año en los Emiratos Árabes Unidos. Descubre el lujo y la modernidad de Dubai junto con la cultura tradicional de Abu Dhabi.",
-      price: "Consultar precios",
+      price: "Desde $3.949 USD",
       duration: "14 días / 12 noches",
       dates: ["27 Dic 2025"],
       rating: 4.9,
@@ -135,7 +136,7 @@ export function Packages() {
       image: "/salvador.webp",
       description:
         "Disfruta de la cultura bahiana y relájate en las hermosas playas de Imbassaí con el confort del hotel Palladium. Una experiencia única en Brasil.",
-      price: "Consultar precios",
+      price: "Desde 2.499 USD",
       duration: "10 días / 8 noches",
       dates: ["20 Sep 2025"],
       rating: 4.8,
@@ -151,7 +152,7 @@ export function Packages() {
       image: "/punta_cana.webp",
       description:
         "Combina lo mejor de República Dominicana: las playas paradisíacas de Punta Cana y la belleza natural de Bayahibe en un solo viaje inolvidable.",
-      price: "Consultar precios",
+      price: "Desde 2.749 USD",
       duration: "11 días / 10 noches",
       dates: ["05 Ene 2026", "19 Ene 2026", "11 Mar 2026", "11 May 2026"],
       rating: 4.9,
@@ -167,7 +168,7 @@ export function Packages() {
       image: "/cancun.webp",
       description:
         "Disfruta del Caribe mexicano en Cancún y Playa del Carmen, más una increíble extensión a Panamá incluida en tu paquete.",
-      price: "Consultar precios",
+      price: "Desde 3149 USD",
       duration: "12 días / 11 noches",
       dates: ["10 Mar 2026", "22 Abr 2026", "03 Jun 2026"],
       rating: 4.7,
@@ -183,7 +184,7 @@ export function Packages() {
       image: "/cuba.webp",
       description:
         "Vive la auténtica experiencia cubana con sol, playas paradisíacas y la hospitalidad caribeña en un resort todo incluido.",
-      price: "Consultar precios",
+      price: "Desde 2549 USD",
       duration: "11 días / 10 noches",
       dates: ["18 Oct 2025"],
       rating: 4.6,
@@ -199,7 +200,7 @@ export function Packages() {
       image: "/peru.webp",
       description:
         "Descubre las maravillas del Imperio Inca y visita la ciudadela sagrada de Machu Picchu en una experiencia cultural única e inolvidable.",
-      price: "Consultar precios",
+      price: "Desde 2649 USD",
       duration: "10 días / 8 noches",
       dates: ["08 Oct 2025", "24 Oct 2025", "29 Nov 2025", "13 Ene 2026", "10 Feb 2026", "09 Mar 2026", "28 Mar 2026", "13 May 2026"],
       rating: 5.0,
