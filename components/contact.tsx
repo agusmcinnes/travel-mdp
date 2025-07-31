@@ -35,7 +35,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-travel-blue text-lg">Dirección</p>
-                    <p className="text-gray-600">Falucho 98 - Mar del Plata</p>
+                    <p className="text-gray-600">Falucho 81 galería local 1 y 2 - Mar del Plata</p>
                     <p className="text-gray-600">Buenos Aires, Argentina</p>
                   </div>
                 </div>
@@ -44,8 +44,10 @@ export function Contact() {
                     <Phone className="h-6 w-6 text-travel-blue" />
                   </div>
                   <div>
-                    <p className="font-semibold text-travel-blue text-lg">Teléfono</p>
-                    <p className="text-gray-600">0223-15-541-2702</p>
+                    <p className="font-semibold text-travel-blue text-lg">Teléfonos</p>
+                    <p className="text-gray-600">223-456-7129</p>
+                    <p className="text-gray-600">223-342-3425</p>
+                    <p className="text-gray-600">223-541-2702</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -74,7 +76,7 @@ export function Contact() {
                     <Facebook className="h-6 w-6 text-travel-blue" />
                   </a>
                   <a
-                    href="https://www.instagram.com/travelgroupmardelplata/?hl=en"
+                    href="https://www.instagram.com/travelgroupmardelplata?igsh=MWlrczJiNXU0bnlvcw%3D%3D"
                     target="_blank"
                     className="bg-travel-gold hover:bg-travel-gold/80 p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-md"
                   >
@@ -85,10 +87,7 @@ export function Contact() {
                   <h4 className="font-montserrat font-bold text-travel-blue mb-3">Horarios de atención</h4>
                   <div className="space-y-2 text-gray-600">
                     <p>
-                      <span className="font-semibold">Lunes a Viernes:</span> 9:00 - 18:00
-                    </p>
-                    <p>
-                      <span className="font-semibold">Sábados:</span> 9:00 - 13:00
+                      <span className="font-semibold">Lunes a Sabado:</span> 9:00 - 18:00
                     </p>
                     <p>
                       <span className="font-semibold">Domingos:</span> Cerrado

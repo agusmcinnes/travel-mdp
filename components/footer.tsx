@@ -41,7 +41,7 @@ export function Footer() {
                   <Facebook className="h-5 w-5 text-travel-blue" />
                 </a>
                 <a
-                  href="https://www.instagram.com/travelgroupmardelplata/?hl=en"
+                  href="https://www.instagram.com/travelgroupmardelplata?igsh=MWlrczJiNXU0bnlvcw%3D%3D"
                   target="_blank"
                   className="bg-travel-gold hover:bg-travel-gold/80 p-2 rounded-full transition-all duration-300 hover:scale-110"
                 >
@@ -97,11 +97,15 @@ export function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-travel-gold mt-0.5 flex-shrink-0" />
-                  <span className="text-blue-100">Falucho 81, Mar del Plata, Buenos Aires</span>
+                  <span className="text-blue-100">Falucho 81 galería local 1 y 2, Mar del Plata, Buenos Aires</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-travel-gold flex-shrink-0" />
-                  <span className="text-blue-100">0223-15-541-2702</span>
+                  <div>
+                    <span className="block text-blue-100">0223-456-7129</span>
+                    <span className="block text-blue-100">0223-342-3425</span>
+                    <span className="block text-blue-100">0223-541-2702</span>
+                  </div>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-travel-gold flex-shrink-0" />
